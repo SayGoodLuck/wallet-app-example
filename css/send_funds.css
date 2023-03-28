@@ -1,0 +1,104 @@
+/* Reset стилей */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Общие стили */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f2f2f2;
+  color: #333;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Стили для заголовка */
+.header {
+  background-color: #fff;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.header h1 {
+  font-size: 32px;
+  font-weight: bold;
+}
+
+/* Стили для формы отправки средств */
+.send-funds {
+  background-color: #fff;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.send-funds h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.send-funds form {
+  display: flex;
+  flex-direction: column;
+}
+
+.send-funds label {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.send-funds input[type="text"],
+.send-funds input[type="number"] {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  font-size: 18px;
+  border: 2px solid #ccc;
+}
+
+.send-funds input[type="text"]:focus,
+.send-funds input[type="number"]:focus {
+  outline: none;
+  border-color: #007bff;
+}
+
+.send-funds input[type="submit"] {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 18px;
+  transition: background-color 0.3s ease;
+  align-self: flex-start;
+  max-width: 200px;
+}
+
+.send-funds input[type="submit"]:hover {
+  background-color: #0062cc;
+}
+
+.back-button {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  }
+  
+  .back-button:hover {
+  background-color: #0062cc;
+  }

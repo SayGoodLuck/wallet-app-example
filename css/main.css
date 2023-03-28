@@ -1,0 +1,186 @@
+/* Reset стилей */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Общие стили */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f2f2f2;
+  color: #333;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Стили для заголовка */
+.header {
+  background-color: #fff;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.header h1 {
+  font-size: 32px;
+  font-weight: bold;
+}
+
+/* Стили для информации о пользователе */
+.user-info {
+  background-color: #fff;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.user-info h2 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.user-info button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.user-info button:hover {
+  background-color: #0062cc;
+}
+
+/* Стили для баланса */
+.balance {
+  background-color: #fff;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.balance h2 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.balance p {
+  font-size: 32px;
+  font-weight: bold;
+}
+
+/* Стили для кнопок */
+.actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.top-up-button,
+.send-funds-button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 18px;
+  transition: background-color 0.3s ease;
+  text-decoration: none;
+}
+
+.top-up-button:hover,
+.send-funds-button:hover {
+  background-color: #0062cc;
+}
+
+/* Стили для кнопки выхода */
+.logout {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+}
+
+.logout input[type="submit"] {
+  background-color: #dc3545;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.logout input[type="submit"]:hover {
+  background-color: #c82333;
+}
+
+.user-info span.email {
+  font-weight: bold;
+  color: #007bff;
+}
+  
+.user-info span.account-number {
+  font-weight: bold;
+  color: #007bff;
+}
+
+/* Стили для формы пополнения баланса */
+.actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.actions form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.actions input[type="number"] {
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  margin-right: 10px;
+  font-size: 18px;
+}
+
+.actions input[type="submit"] {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 18px;
+  transition: background-color 0.3s ease;
+  text-decoration: none;
+}
+
+.actions input[type="submit"]:hover {
+  background-color: #0062cc;
+}
+
+.history-button {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #0066cc;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.history-button:hover {
+  background-color: #0052a3;
+}
+  
