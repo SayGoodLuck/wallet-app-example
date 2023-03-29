@@ -29,6 +29,10 @@ if ($result && pg_num_rows($result) > 0) {
   <title>eSender</title>
   <link rel="stylesheet" type="text/css" href="css/main.css">
   <link rel="icon" href="favico.png" type="image/png">
+  <!-- подключаем библиотеку toastr -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
 </head>
 
 <body>
@@ -64,8 +68,11 @@ if ($result && pg_num_rows($result) > 0) {
 
     copyAccountNumberButton.addEventListener('click', () => {
       navigator.clipboard.writeText(accountNumber);
-      alert("Account number copied to clipboard!");
+      toastr.success('Успешно скопировано в буфер обмена!');
     });
+  </script>
+  <script>
+    toastr.options.closeButton = true; // добавляем кнопку закрытия во все уведомления
   </script>
 
 </body>

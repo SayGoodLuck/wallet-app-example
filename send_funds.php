@@ -11,7 +11,7 @@
 <body>
   <div class="container">
     <div class="header">
-      <h1>Send Funds</h1>
+      <h1>eSender - Send Funds</h1>
     </div>
     <div class="send-funds">
       <h2>Details:</h2>

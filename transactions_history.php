@@ -10,7 +10,7 @@ require_once 'config/database.php';
 
 // Получение данных текущего пользователя
 $user_id = $_SESSION['user']['id'];
-$sql = "SELECT * FROM transactions WHERE sender_id = $1 ORDER BY created_at DESC";
+$sql = "SELECT * FROM transactions WHERE sender_id = $1 UNION SELECT * FROM transactions WHERE recipient_id = $1 ORDER BY created_at DESC";
 $result = pg_query_params($connection, $sql, array($user_id));
 
 if (!$result) {
@@ -39,7 +39,8 @@ if (!$result) {
       <thead>
         <tr>
           <th>Date</th>
-          <th>Recipient Account Number</th>
+          <th>Account Number</th>
+          <th>Type</th>
           <th>Amount</th>
         </tr>
       </thead>
@@ -48,9 +49,13 @@ if (!$result) {
           <tr>
             <td><?php echo date('Y-m-d H:i', strtotime($row['created_at'])); ?></td>
             <td><?php
-                $recipient_id = $row['recipient_id'];
+                if ($row['sender_id'] == $user_id) {
+                  $account_id = $row['recipient_id'];
+                } else {
+                  $account_id = $row['sender_id'];
+                }
                 $sql2 = "SELECT account_number FROM users WHERE id = $1";
-                $result2 = pg_query_params($connection, $sql2, array($recipient_id));
+                $result2 = pg_query_params($connection, $sql2, array($account_id));
                 if ($result2 && pg_num_rows($result2) > 0) {
                   $user = pg_fetch_assoc($result2);
                   echo htmlspecialchars($user['account_number']);
@@ -58,6 +63,10 @@ if (!$result) {
                   echo "N/A";
                 }
                 ?></td>
+            <td>
+              <div class="circle <?php echo $row['sender_id'] == $user_id ? 'outgoing' : 'incoming'; ?>"></div>
+              <?php echo $row['sender_id'] == $user_id ? 'Outgoing' : 'Incoming'; ?>
+            </td>
             <td>$<?php echo number_format($row['amount'], 2); ?></td>
           </tr>
         <?php endwhile; ?>
